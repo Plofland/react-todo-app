@@ -1,42 +1,37 @@
 body {
-    font-family: 'Source Code Pro', monospace;
-    background-color: darkslategray;
-    color: whitesmoke;
+  font-family: 'Source Code Pro', monospace;
+  background-color: darkslategray;
+  color: whitesmoke;
 }
 
 .todoList {
-    display: flex;
-    flex-direction: column;
-    width: 70%;
-    margin: 0 auto;
-    background-color: rgb(32, 53, 53);
-    align-items: center;
-    /* border: 1px solid black; */
-    box-shadow: 
-        0 1px 1px rgba(200,200,200,0.15),
-        0 10px 0 -5px rgb(32, 53, 53),
-        0 10px 1px -4px rgba(200,200,200,0.15),
-        0 20px 0 -10px rgba(32, 53, 53),
-        0 20px 1px -9px rgba(200,200,200,0.15);
-    padding: 5%;
-
+  display: flex;
+  flex-direction: column;
+  width: 70%;
+  margin: 0 auto;
+  background-color: rgb(32, 53, 53);
+  align-items: center;
+  /* border: 1px solid black; */
+  box-shadow: 0 1px 1px rgba(200, 200, 200, 0.15), 0 10px 0 -5px rgb(32, 53, 53),
+    0 10px 1px -4px rgba(200, 200, 200, 0.15), 0 20px 0 -10px rgba(32, 53, 53),
+    0 20px 1px -9px rgba(200, 200, 200, 0.15);
+  padding: 5%;
 }
 
 .todoItem {
-    display: flex;
-    justify-content: flex-start;
-    align-items: center;
-    border-bottom: 1px solid rgb(17, 29, 29);
-    width: 70%;
-    margin: 4% 0;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  border-bottom: 1px solid rgb(17, 29, 29);
+  width: 70%;
+  margin: 4% 0;
 }
 
 .todoText {
-    /* border: 2px solid black; */
-    /* margin: 1% auto; */
+  /* border: 2px solid black; */
+  /* margin: 1% auto; */
 }
 
-input[type=checkbox] {
-    margin-right: 5%;
+input[type='checkbox'] {
+  margin-right: 5%;
 }
-
