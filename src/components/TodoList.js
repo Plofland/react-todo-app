@@ -1,12 +1,8 @@
-import React from 'react'
-import todoData from 'todoData.js'
+import React from 'react';
+import todoData from 'todoData.js';
 
-const
+export default function TodoList(props) {
+  const { todoData } = props;
 
-export default function TodoList() {
- return (
-  <div>
-   
-  </div>
- )
+  return <div></div>;
 }

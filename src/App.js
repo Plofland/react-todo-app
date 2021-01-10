@@ -1,15 +1,30 @@
-import React from 'react';
-import TodoItem from './components/TodoItem';
-import todoData from './components/todoData';
-import todoList from './components/TodoList';
+import React, { useState } from 'react';
+import TodoList from './components/TodoList';
 import TaskOnboarding from './components/TaskOnboarding';
 
+const initialTodoData = [
+  {
+    id: '',
+    text: '',
+    completed: false
+  }
+];
+
 export default function App() {
+  const [todoData, setTodoData] = useState(initialTodoData);
+
+  const updateList = (inputName, inputValue) => {
+    setTodoData({
+      ...todoData,
+      [inputName]: inputValue
+    });
+  };
+
   return (
     <div>
       <h1>UNDER CONSTRUCTION: Rebuilding the app to make it even better!</h1>
-      <TodoList />
-      <TaskOnboarding />
+      <TodoList todoData={todoData} />
+      <TaskOnboarding update={updateList} />
     </div>
   );
 }
