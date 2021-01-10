@@ -1,9 +1,20 @@
 import React from 'react';
 import styled from 'styled-components';
 
-const StyledTaskOnboarding = styled.div``;
+const StyledTaskOnboarding = styled.div`
+  display: flex;
+  flex-direction: column;
+`;
 
-const StyledButtons = styled.div``;
+const StyledTaskInput = styled.div`
+  display: flex;
+  justify-content: space-between;
+`;
+
+const StyledButtons = styled.div`
+  display: flex;
+  justify-content: space-evenly;
+`;
 
 export default function TaskOnboarding(props) {
   const { update } = props;
@@ -16,10 +27,10 @@ export default function TaskOnboarding(props) {
   return (
     <>
       <StyledTaskOnboarding>
-        <div>
+        <StyledTaskInput>
           <input type="text" name="text" value="text"></input>
           <button onClick={submit}>Add Task</button>
-        </div>
+        </StyledTaskInput>
         <StyledButtons>
           <button>Clear Completed Tasks</button>
           <button>Clear All Tasks</button>

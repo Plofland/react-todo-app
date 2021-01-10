@@ -23,7 +23,7 @@ const StyledTodoItem = styled.div`
 `;
 
 function TodoItem(props) {
-  //   const { item, handleChange } = props;
+    const { id, item, handleChange } = props;
   const completedStyle = {
     color: '#778899',
     textDecoration: 'line-through'

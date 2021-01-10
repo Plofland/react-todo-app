@@ -12,6 +12,7 @@ const initialTodoData = [
 
 export default function App() {
   const [todoData, setTodoData] = useState(initialTodoData);
+  const [ completed, setCompleted ] = useState(initialTodoData.completed);
 
   const updateList = (inputName, inputValue) => {
     setTodoData({
@@ -20,10 +21,18 @@ export default function App() {
     });
   };
 
+  handleChange(id){
+    setCompleted(
+      if(todoData.id === id){
+        todoData.completed = !todoData.completed
+      } return todoData
+    )
+  }
+
   return (
     <div>
       <h1>UNDER CONSTRUCTION: Rebuilding the app to make it even better!</h1>
-      <TodoList todoData={todoData} />
+      <TodoList todoData={todoData} handleChange={handleChange} />
       <TaskOnboarding update={updateList} />
     </div>
   );
