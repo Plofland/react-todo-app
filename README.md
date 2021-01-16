@@ -11,8 +11,9 @@
 [] put the "Add Task" input and the "Clear All Completed Tasks" button in an accordion menu at the top, it should only be visible when you want to edit the ToDo list
 [] add little 'x' icon that when clicked, the task will be deleted from the todoData array
 
-**_Styling_**
+**_Styling/Design_**
 [] make app resonsive for when it is scaled above 800px (add some media queries to the style.css file)
+[] when there are no tasks on the list, have a type and delete animation (https://codepen.io/gschier/pen/jkivt)
 
 **_Improvements_**
 [] **Persist your data** in `window.localStorage()` hint: you may have to pass your data to a stringifier to get it to live inside the `localStorage()` of the browser. This will cause it to persist past the page refresh.

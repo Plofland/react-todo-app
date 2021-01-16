@@ -1,42 +1,65 @@
 import React, { useState } from 'react';
 import TodoList from './components/TodoList';
 import TaskOnboarding from './components/TaskOnboarding';
+import { createGlobalStyle } from 'styled-components';
 
-const initialTodoData = [
-  {
-    id: '',
-    text: '',
-    completed: false
-  }
-];
+const TodoApp = createGlobalStyle`
+  font-family: 'Source Code Pro', monospace;
+  background-color: darkslategray;
+  color: whitesmoke;
+`;
+
+// const initialTodoData = [
+//   {
+//     id: '',
+//     task: '',
+//     completed: false
+//   }
+// ];
+// const [todoData, setTodoData] = useState(initialTodoData);
+// const [completed, setCompleted] = useState(initialTodoData.completed);
 
 export default function App() {
-  const [todoData, setTodoData] = useState(initialTodoData);
-  const [ completed, setCompleted ] = useState(initialTodoData.completed);
+  const [todoData, setTodoData] = useState([]);
+  const [completed, setCompleted] = useState(false);
 
-  const updateList = (inputName, inputValue) => {
+  const updateList = (newTask) => {
     setTodoData({
       ...todoData,
-      [inputName]: inputValue
+      newTask
     });
   };
 
-  handleChange(id){
-    setCompleted(
-      if(todoData.id === id){
-        todoData.completed = !todoData.completed
-      } return todoData
-    )
-  }
+  const handleComplete = (id) => {
+    setCompleted(() => {
+      if (todoData.id === id) {
+        return !todoData.completed;
+      }
+      return todoData;
+    });
+  };
 
   return (
     <div>
+      <TodoApp />
       <h1>UNDER CONSTRUCTION: Rebuilding the app to make it even better!</h1>
-      <TodoList todoData={todoData} handleChange={handleChange} />
-      <TaskOnboarding update={updateList} />
+      <TaskOnboarding
+        todoData={todoData}
+        updateList={updateList}
+        setTodoData={setTodoData}
+      />
+      <TodoList todoData={todoData} handleComplete={handleComplete} />
     </div>
   );
 }
+
+// //!where is inputName and inputValue coming from? TaskOnboarding line37
+// const updateList = (inputName, inputValue) => {
+//   setTodoData({
+//     ...todoData,
+//     [inputName]: inputValue
+//   });
+// };
 
 // class App extends React.Component {
 //   constructor() {
