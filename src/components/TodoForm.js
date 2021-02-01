@@ -15,7 +15,7 @@ export default function TodoForm(props) {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    updateList(state);
+    updateList(state.inputText);
     setState({
       inputText: ''
     });

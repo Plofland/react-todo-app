@@ -13,11 +13,8 @@ export default function App() {
       inputText: newTask,
       complete: false
     };
-
     const newList = [...todoData, task];
-    setTodoData({
-      todoData: newList
-    });
+    setTodoData(newList);
   };
 
   const handleComplete = (id) => {
