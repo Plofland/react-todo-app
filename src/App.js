@@ -1,32 +1,22 @@
 import React, { useState } from 'react';
 import TodoList from './components/TodoList';
-import TaskOnboarding from './components/TaskOnboarding';
+import TodoForm from './components/TodoForm';
 import { createGlobalStyle } from 'styled-components';
-
-const TodoApp = createGlobalStyle`
-  font-family: 'Source Code Pro', monospace;
-  background-color: darkslategray;
-  color: whitesmoke;
-`;
-
-// const initialTodoData = [
-//   {
-//     id: '',
-//     task: '',
-//     completed: false
-//   }
-// ];
-// const [todoData, setTodoData] = useState(initialTodoData);
-// const [completed, setCompleted] = useState(initialTodoData.completed);
 
 export default function App() {
   const [todoData, setTodoData] = useState([]);
   const [completed, setCompleted] = useState(false);
 
   const updateList = (newTask) => {
+    const task = {
+      id: todoData.length,
+      inputText: newTask,
+      complete: false
+    };
+
+    const newList = [...todoData, task];
     setTodoData({
-      ...todoData,
-      newTask
+      todoData: newList
     });
   };
 
@@ -43,15 +33,21 @@ export default function App() {
     <div>
       <TodoApp />
       <h1>UNDER CONSTRUCTION: Rebuilding the app to make it even better!</h1>
-      <TaskOnboarding
+      <TodoForm
         todoData={todoData}
         updateList={updateList}
-        setTodoData={setTodoData}
+        // setTodoData={setTodoData}
       />
       <TodoList todoData={todoData} handleComplete={handleComplete} />
     </div>
   );
 }
+
+const TodoApp = createGlobalStyle`
+  font-family: 'Source Code Pro', monospace;
+  background-color: darkslategray;
+  color: whitesmoke;
+`;
 
 // //!where is inputName and inputValue coming from? TaskOnboarding line37
 // const updateList = (inputName, inputValue) => {
