@@ -19,7 +19,7 @@ function TodoItem(props) {
         />
         <p className="todoText" style={item.completed ? completedStyle : null}>
           {/* {props.item.completed ? <s>{props.item.text}</s> : props.item.text} this works for just a strike trough text but the completedStyle variable with inline styling can do multiple styling properties*/}
-          {props.item.text}
+          {item.text}
         </p>
       </StyledTodoItem>
     </>

@@ -10,7 +10,7 @@ export default function App() {
   const updateList = (newTask) => {
     const task = {
       id: todoData.length,
-      inputText: newTask,
+      text: newTask,
       complete: false
     };
     const newList = [...todoData, task];
