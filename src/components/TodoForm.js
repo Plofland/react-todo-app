@@ -4,19 +4,19 @@ import styled from 'styled-components';
 export default function TodoForm(props) {
   const { updateList } = props;
 
-  const [newTask, setNewTask] = useState({ inputText: '' });
+  const [state, setState] = useState({ inputText: '' });
 
   const handleChange = (e) => {
-    setNewTask({
+    setState({
       inputText: e.target.value
     });
-    console.log(newTask);
+    // console.log(state);
   };
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    updateList(newTask);
-    setNewTask({
+    updateList(state);
+    setState({
       inputText: ''
     });
   };
@@ -28,7 +28,7 @@ export default function TodoForm(props) {
           <input
             type="text"
             name="task"
-            value={newTask.inputText}
+            value={state.inputText}
             onChange={handleChange}
           ></input>
           <button id="addTaskBtn" onClick={handleSubmit}>
