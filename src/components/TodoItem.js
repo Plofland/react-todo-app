@@ -2,20 +2,24 @@ import React from 'react';
 import styled from 'styled-components';
 
 function TodoItem(props) {
-  const { item, handleComplete } = props;
+  const { item, handleToggle } = props;
 
   const completedStyle = {
     color: '#778899',
     textDecoration: 'line-through'
   };
 
+  const handleClick = () => {
+    handleToggle(item.id);
+  };
+
   return (
     <>
-      <StyledTodoItem>
+      <StyledTodoItem onClick={handleClick}>
         <input
           type="checkbox"
           checked={item.completed}
-          onChange={handleComplete}
+          // onChange={handleComplete}
         />
         <p className="todoText" style={item.completed ? completedStyle : null}>
           {/* {props.item.completed ? <s>{props.item.text}</s> : props.item.text} this works for just a strike trough text but the completedStyle variable with inline styling can do multiple styling properties*/}
@@ -35,6 +39,7 @@ const StyledTodoItem = styled.div`
   border-bottom: 1px solid rgb(17, 29, 29);
   width: 70%;
   margin: 4% 0;
+  cursor: pointer;
 
   .todoText {
     /* border: 2px solid black; */

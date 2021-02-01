@@ -3,7 +3,7 @@ import TodoItem from './TodoItem';
 import styled from 'styled-components';
 
 export default function TodoList(props) {
-  const { todoData, handleComplete } = props;
+  const { todoData, handleToggle } = props;
 
   console.log(todoData);
   return (
@@ -11,11 +11,7 @@ export default function TodoList(props) {
       {todoData &&
         todoData.map((item) => {
           return (
-            <TodoItem
-              key={item.id}
-              item={item}
-              handleComplete={handleComplete}
-            />
+            <TodoItem key={item.id} item={item} handleToggle={handleToggle} />
           );
         })}
     </StyledItemList>
