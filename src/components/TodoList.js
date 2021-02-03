@@ -5,7 +5,7 @@ import styled from 'styled-components';
 export default function TodoList(props) {
   const { todoData, handleToggle } = props;
 
-  console.log(todoData);
+  console.log('INCOMING TODODATA', todoData);
   return (
     <StyledItemList>
       {todoData &&

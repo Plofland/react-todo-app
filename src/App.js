@@ -17,17 +17,19 @@ export default function App() {
   };
 
   const handleToggle = (itemId) => {
-    setTodoData({
-      // todoData.map(item => {
-      //   if (item.id === itemId){
-      //     return {
-      //       ...item,
-      //       complete: !item.complete
-      //     };
-      //   }
-      //   return item;
-      // })
-    });
+    console.log('TOGGLE', todoData);
+
+    setTodoData(
+      todoData.map((item) => {
+        if (item.id === itemId) {
+          return {
+            ...item,
+            complete: !item.complete
+          };
+        }
+        return item;
+      })
+    );
   };
 
   // const handleComplete = (id) => {

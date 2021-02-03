@@ -28,8 +28,8 @@ body {
 }
 
 .todoText {
-  /* border: 2px solid black; */
-  /* margin: 1% auto; */
+  color: #778899;
+  text-decoration: line-through;
 }
 
 input[type='checkbox'] {
