@@ -21,6 +21,7 @@
 - [x] Add a clear all button to empty out the todoData array ("Clear All Tasks")
 - [x] Add a button that will clear all completed tasks from the todoData array ("Clear All Completed Tasks")
 - [] Send out an error alert when the text field is left blank and the "Add" button is clicked
+- [] Pressing enter while in the text input will click the "Add" button
 
 ---
 
