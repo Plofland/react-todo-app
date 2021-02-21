@@ -41,6 +41,7 @@ export default function TodoForm(props) {
           className={classes.root}
           noValidate
           autoComplete="off"
+          onSubmit={handleSubmit}
         >
           <div className="addInputs">
             <TextField
