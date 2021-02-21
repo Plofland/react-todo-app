@@ -32,21 +32,30 @@ export default function App() {
     );
   };
 
-  // const handleComplete = (id) => {
-  //   setCompleted(() => {
-  //     if (todoData.id === id) {
-  //       return !todoData.completed;
-  //     }
-  //     return todoData;
-  //   });
-  // };
+  const handleComplete = () => {
+    const newList = todoData.filter((item) => {
+      return !item.complete;
+    });
+
+    setTodoData(newList);
+  };
 
   return (
     <div>
       <TodoApp />
-      <h1>UNDER CONSTRUCTION: Rebuilding the app to make it even better!</h1>
-      <TodoForm todoData={todoData} updateList={updateList} />
-      <TodoList todoData={todoData} handleToggle={handleToggle} />
+      <h1>
+        UNDER CONSTRUCTION: Rebuilding the app to make it
+        even better!
+      </h1>
+      <TodoForm
+        todoData={todoData}
+        updateList={updateList}
+        handleComplete={handleComplete}
+      />
+      <TodoList
+        todoData={todoData}
+        handleToggle={handleToggle}
+      />
     </div>
   );
 }
