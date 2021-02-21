@@ -40,6 +40,10 @@ export default function App() {
     setTodoData(newList);
   };
 
+  const handleClearAll = () => {
+    setTodoData([])
+  }
+
   return (
     <div>
       <TodoApp />
@@ -51,6 +55,7 @@ export default function App() {
         todoData={todoData}
         updateList={updateList}
         handleComplete={handleComplete}
+        handleClearAll={handleClearAll}
       />
       <TodoList
         todoData={todoData}

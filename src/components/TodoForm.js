@@ -5,7 +5,7 @@ import TextField from '@material-ui/core/TextField';
 import Button from '@material-ui/core/Button';
 
 export default function TodoForm(props) {
-  const { updateList, handleComplete } = props;
+  const { updateList, handleComplete, handleClearAll } = props;
 
   const [state, setState] = useState({ inputText: '' });
 
@@ -60,7 +60,7 @@ export default function TodoForm(props) {
           >
             Clear Completed
           </Button>
-          <Button variant="contained" color="primary">
+          <Button variant="contained" color="primary" onClick={handleClearAll}>
             Clear All
           </Button>
         </form>
