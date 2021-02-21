@@ -8,11 +8,13 @@ function TodoItem(props) {
     handleToggle(item.id);
     console.log('ITEM ID', item.id);
   };
-  
+
   return (
     <>
       <StyledTodoItem onClick={handleClick}>
-        <p className={item.complete ? 'todoText' : null}>◾ {item.text}</p>
+        <p className={item.complete ? 'todoText' : null}>
+          ◾ {item.text}
+        </p>
       </StyledTodoItem>
     </>
   );
@@ -36,7 +38,4 @@ const StyledTodoItem = styled.div`
     text-decoration: line-through;
   }
 
-  input[type='checkbox'] {
-    margin-right: 5%;
-  }
 `;

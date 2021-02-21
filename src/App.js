@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import TodoList from './components/TodoList';
 import TodoForm from './components/TodoForm';
 import { createGlobalStyle } from 'styled-components';
+import GoogleFontLoader from 'react-google-font-loader';
 
 export default function App() {
   const [todoData, setTodoData] = useState([]);
@@ -41,16 +42,21 @@ export default function App() {
   };
 
   const handleClearAll = () => {
-    setTodoData([])
-  }
+    setTodoData([]);
+  };
 
   return (
-    <div>
+    <>
+      <GoogleFontLoader
+        fonts={[
+          {
+            font: 'Hachi Maru Pop',
+            weights: [400]
+          }
+        ]}
+      />
       <TodoApp />
-      <h1>
-        UNDER CONSTRUCTION: Rebuilding the app to make it
-        even better!
-      </h1>
+      <h1>ToDo App</h1>
       <TodoForm
         todoData={todoData}
         updateList={updateList}
@@ -61,12 +67,20 @@ export default function App() {
         todoData={todoData}
         handleToggle={handleToggle}
       />
-    </div>
+    </>
   );
 }
 
 const TodoApp = createGlobalStyle`
-  font-family: 'Source Code Pro', monospace;
-  background-color: darkslategray;
-  color: whitesmoke;
+  body {
+    font-family: 'Source Code Pro', monospace;
+    background-color: darkslategray;
+    color: whitesmoke;
+  }
+  h1 {
+    display:flex;
+    justify-content: center;
+    font-family: 'Hachi Maru Pop', cursive;
+    padding: 3%;
+  }
 `;

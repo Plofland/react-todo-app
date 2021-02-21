@@ -6,10 +6,10 @@
 
 ## ReVamp the App
 
-- [] Get rid of all the code that I had used when following along with the tutorial (constructor function, 'this' functionality, etc.)
+- [x] Get rid of all the code that I had used when following along with the tutorial (constructor function, 'this' functionality, etc.)
   - if I don't understand it, get rid of it
 - [x] Rewrite the App function so that it is only returning the components TodoList and TaskOnboarding
-- [] Have the TodoList component mapping over the todoData and returning a TodoItem
+- [x] Have the TodoList component mapping over the todoData and returning a TodoItem
 - [x] Change out text fields and buttons for materia-ui form
 
 ---
@@ -18,8 +18,9 @@
 
 - [x] Get text to be striked through when task is completed
 - [x] Add a input form that will add an object to the todoData array when a button is clicked ("Add Task")
-- [] Add a clear all button to empty out the todoData array ("Clear All Tasks")
-- [] Add a button that will clear all completed tasks from the todoData array ("Clear All Completed Tasks")
+- [x] Add a clear all button to empty out the todoData array ("Clear All Tasks")
+- [x] Add a button that will clear all completed tasks from the todoData array ("Clear All Completed Tasks")
+- [] Send out an error alert when the text field is left blank and the "Add" button is clicked
 - [] Put the "Add Task" input and the "Clear All Completed Tasks" button in an accordion menu at the top, it should only be visible when you want to edit the ToDo list
 - [] Add little 'x' icon that when clicked, the task will be deleted from the todoData array
 
