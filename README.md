@@ -21,8 +21,6 @@
 - [x] Add a clear all button to empty out the todoData array ("Clear All Tasks")
 - [x] Add a button that will clear all completed tasks from the todoData array ("Clear All Completed Tasks")
 - [] Send out an error alert when the text field is left blank and the "Add" button is clicked
-- [] Put the "Add Task" input and the "Clear All Completed Tasks" button in an accordion menu at the top, it should only be visible when you want to edit the ToDo list
-- [] Add little 'x' icon that when clicked, the task will be deleted from the todoData array
 
 ---
 
@@ -32,10 +30,13 @@
 - [] When there are no tasks on the list, have a type and [delete animation](https://codepen.io/gschier/pen/jkivt)
 - [] Add [this animation](https://youtu.be/KYOYVZcZYAI?list=PL2B-ghQCJHsq1oqe0AJ9QX4tuIl1OPSZx&t=80) when checking off an item from the list
 - [] When the above ⬆ animation finishes, markdown the text with a strike-through
+- [] Put the "Add Task" input and the "Clear All Completed Tasks" button in an accordion menu at the top, it should only be visible when you want to edit the ToDo list
+- [] Add little 'x' icon that when clicked, the task will be deleted from the todoData array
 
 ---
 
 ## Improvements
 
-- [] **Persist your data** in `window.localStorage()` hint: you may have to pass your data to a stringifier to get it to live inside the `localStorage()` of the browser. This will cause it to persist past the page refresh.
-- []- **Search Functionality** Add a input bar that allows you to search through your tasks and only show the ones that match the search input.
+- [x] **Persist your data** in `window.localStorage()` hint: you may have to pass your data to a stringifier to get it to live inside the `localStorage()` of the browser. This will cause it to persist past the page refresh.
+- [] Use Context API to keep todoData state and event handlers all in one place
+- [] **Search Functionality** Add a input bar that allows you to search through your tasks and only show the ones that match the search input.

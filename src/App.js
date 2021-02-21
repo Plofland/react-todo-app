@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import TodoList from './components/TodoList';
 import TodoForm from './components/TodoForm';
 import { createGlobalStyle } from 'styled-components';
@@ -18,8 +18,6 @@ export default function App() {
   };
 
   const handleToggle = (itemId) => {
-    console.log('TOGGLE', todoData);
-
     setTodoData(
       todoData.map((item) => {
         if (item.id === itemId) {
@@ -44,6 +42,22 @@ export default function App() {
   const handleClearAll = () => {
     setTodoData([]);
   };
+
+  useEffect(() => {
+    const todoData = JSON.parse(
+      localStorage.getItem('todoData')
+    );
+    if (todoData) {
+      setTodoData(todoData);
+    }
+  }, []);
+
+  useEffect(() => {
+    localStorage.setItem(
+      'todoData',
+      JSON.stringify(todoData)
+    );
+  }, [todoData]);
 
   return (
     <>
