@@ -4,20 +4,14 @@ import styled from 'styled-components';
 function TodoItem(props) {
   const { item, handleToggle } = props;
 
-  // const completedStyle = {
-  //   color: '#778899',
-  //   textDecoration: 'line-through'
-  // };
-
   const handleClick = () => {
     handleToggle(item.id);
     console.log('ITEM ID', item.id);
   };
-  // onClick={handleClick}
+  
   return (
     <>
       <StyledTodoItem onClick={handleClick}>
-        {/* <input type="checkbox" checked={item.complete} onChange={handleClick} /> */}
         <p className={item.complete ? 'todoText' : null}>◾ {item.text}</p>
       </StyledTodoItem>
     </>

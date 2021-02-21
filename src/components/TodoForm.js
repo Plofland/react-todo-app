@@ -1,10 +1,15 @@
 import React, { useState } from 'react';
 import styled from 'styled-components';
+import { makeStyles } from '@material-ui/core/styles';
+import TextField from '@material-ui/core/TextField';
+import Button from '@material-ui/core/Button';
 
 export default function TodoForm(props) {
   const { updateList } = props;
 
   const [state, setState] = useState({ inputText: '' });
+
+  const classes = useStyles();
 
   const handleChange = (e) => {
     setState({
@@ -15,30 +20,46 @@ export default function TodoForm(props) {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    updateList(state.inputText);
-    setState({
-      inputText: ''
-    });
+    if (e.target.value === '') {
+      console.log('THERE IS NO TASK ENTERED');
+    } else {
+      updateList(state.inputText);
+      setState({
+        inputText: ''
+      });
+    }
   };
 
   return (
     <>
       <StyledTaskOnboarding>
-        <div className="addTask">
-          <input
-            type="text"
-            name="task"
+        <div></div>
+        <form
+          className={classes.root}
+          noValidate
+          autoComplete="off"
+        >
+          <TextField
+            id="outlined-basic"
+            label="New Task"
+            variant="outlined"
             value={state.inputText}
             onChange={handleChange}
-          ></input>
-          <button id="addTaskBtn" onClick={handleSubmit}>
-            Add Task
-          </button>
-        </div>
-        <div className="clearTasks">
-          <button id="clearCompleteBtn">Clear Completed Tasks</button>
-          <button id="clearAllBtn">Clear All Tasks</button>
-        </div>
+          />
+          <Button
+            variant="contained"
+            color="primary"
+            onClick={handleSubmit}
+          >
+            Add
+          </Button>
+          <Button variant="contained" color="primary">
+            Clear Completed
+          </Button>
+          <Button variant="contained" color="primary">
+            Clear All
+          </Button>
+        </form>
       </StyledTaskOnboarding>
     </>
   );
@@ -46,44 +67,25 @@ export default function TodoForm(props) {
 
 const StyledTaskOnboarding = styled.div`
   display: flex;
-  /* border: 2px solid black; */
+  border: 2px solid black;
+  /* justify-content: center; */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 80%;
+  margin: 1rem auto;
+  /* cursor: pointer; */
+  border: 1px solid blue;
 
   .addTask {
-    display: flex;
-    justify-content: center;
-    width: 60%;
-    margin: 1rem auto;
-    /* cursor: pointer; */
-    /* border: 1px solid blue; */
-
-    input {
-      width: 70%;
-    }
-
-    #addTaskBtn {
-      border-radius: 0 5px 5px 0;
-    }
-  }
-
-  .clearTasks {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    width: 30%;
-    padding: 1%;
-    /* border: 1px solid red; */
-
-    button {
-      width: 80%;
-      cursor: pointer;
-    }
-
-    #clearCompleteBtn {
-      border-radius: 8px 8px 0px 0;
-    }
-
-    #clearAllBtn {
-      border-radius: 0 0 8px 8px;
-    }
   }
 `;
+
+const useStyles = makeStyles((theme) => ({
+  root: {
+    '& > *': {
+      margin: theme.spacing(1),
+      width: '25ch'
+    }
+  }
+}));
