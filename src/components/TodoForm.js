@@ -42,34 +42,39 @@ export default function TodoForm(props) {
           noValidate
           autoComplete="off"
         >
-          <TextField
-            id="outlined-basic"
-            label="New Task"
-            variant="outlined"
-            value={state.inputText}
-            onChange={handleChange}
-          />
-          <Button
-            variant="contained"
-            color="primary"
-            onClick={handleSubmit}
-          >
-            Add
-          </Button>
-          <Button
-            variant="contained"
-            color="primary"
-            onClick={handleComplete}
-          >
-            Clear Completed
-          </Button>
-          <Button
-            variant="contained"
-            color="primary"
-            onClick={handleClearAll}
-          >
-            Clear All
-          </Button>
+          <div className="addInputs">
+            <TextField
+              id="outlined-basic"
+              label="New Task"
+              variant="outlined"
+              value={state.inputText}
+              onChange={handleChange}
+            />
+            <Button
+              variant="contained"
+              color="primary"
+              onClick={handleSubmit}
+              id="addButton"
+            >
+              Add
+            </Button>
+          </div>
+          <div className="clearInputs">
+            <Button
+              variant="contained"
+              color="primary"
+              onClick={handleComplete}
+            >
+              Clear Completed
+            </Button>
+            <Button
+              variant="contained"
+              color="primary"
+              onClick={handleClearAll}
+            >
+              Clear All
+            </Button>
+          </div>
         </form>
       </StyledTaskOnboarding>
     </>
@@ -77,18 +82,30 @@ export default function TodoForm(props) {
 }
 
 const StyledTaskOnboarding = styled.div`
-  display: flex;
-  border: 2px solid black;
-  /* justify-content: center; */
-  display: flex;
-  justify-content: center;
-  align-items: center;
   width: 80%;
   margin: 1rem auto;
-  /* cursor: pointer; */
-  border: 1px solid blue;
 
-  .addTask {
+  form {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+  }
+
+  .addInputs {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    width: 50%;
+  }
+  #addButton {
+    margin: 1%;
+  }
+  .clearInputs {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 40%;
+    padding: 0.5%;
   }
 `;
 

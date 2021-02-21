@@ -30,7 +30,6 @@ const StyledItemList = styled.div`
   align-items: center;
   padding: 3%;
   border-radius: 2px;
-  /* border: 1px solid black; */
   box-shadow: 0 1px 1px rgba(200, 200, 200, 0.15),
     0 10px 0 -5px rgb(32, 53, 53),
     0 10px 1px -4px rgba(200, 200, 200, 0.15),

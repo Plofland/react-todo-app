@@ -32,8 +32,6 @@ const StyledTodoItem = styled.div`
   cursor: pointer;
 
   .todoText {
-    /* border: 2px solid black; */
-    /* margin: 1% auto; */
     color: #778899;
     text-decoration: line-through;
   }
