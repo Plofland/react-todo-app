@@ -56,18 +56,18 @@ const StyledTodoItem = styled.div`
   }
   @media (min-width: 801px) {
     .todoText {
-      font-size: 1.4rem;
+      font-size: 1.2rem;
     }
     .doneText {
-      font-size: 1.4rem;
+      font-size: 1.2rem;
     }
   }
   @media (min-width: 1200px) {
     .todoText {
-      font-size: 1.6rem;
+      font-size: 1.4rem;
     }
     .doneText {
-      font-size: 1.6rem;
+      font-size: 1.4rem;
     }
   }
 `;
