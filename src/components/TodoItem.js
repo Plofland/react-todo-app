@@ -12,7 +12,12 @@ function TodoItem(props) {
   return (
     <>
       <StyledTodoItem onClick={handleClick}>
-        <p className={item.complete ? 'todoText' : null}>
+        {/* <input type="checkbox" /> */}
+        <p
+          className={
+            item.complete ? 'doneText' : 'todoText'
+          }
+        >
           ◾ {item.text}
         </p>
       </StyledTodoItem>
@@ -31,9 +36,38 @@ const StyledTodoItem = styled.div`
   margin: 4% 0;
   cursor: pointer;
 
-  .todoText {
+  p {
+    word-wrap: break-word;
+  }
+
+  .doneText {
     color: #778899;
     text-decoration: line-through;
   }
 
+  @media (max-width: 800px) {
+    padding: 1%;
+    .todoText {
+      font-size: 1.2rem;
+    }
+    .doneText {
+      font-size: 1.2rem;
+    }
+  }
+  @media (min-width: 801px) {
+    .todoText {
+      font-size: 1.4rem;
+    }
+    .doneText {
+      font-size: 1.4rem;
+    }
+  }
+  @media (min-width: 1200px) {
+    .todoText {
+      font-size: 1.6rem;
+    }
+    .doneText {
+      font-size: 1.6rem;
+    }
+  }
 `;

@@ -27,12 +27,15 @@
 
 ## Styling/Design
 
-- [] Make app resonsive for when it is scaled above 800px (add some media queries to the style.css file)
+- [x] Make app resonsive for when it is scaled above 800px (add some media queries to the style.css file)
+- [] Styled the button to look more natural when scaled down for mobile
 - [] When there are no tasks on the list, have a type and [delete animation](https://codepen.io/gschier/pen/jkivt)
 - [] Add [this animation](https://youtu.be/KYOYVZcZYAI?list=PL2B-ghQCJHsq1oqe0AJ9QX4tuIl1OPSZx&t=80) when checking off an item from the list
 - [] When the above ⬆ animation finishes, markdown the text with a strike-through
 - [] Put the "Add Task" input and the "Clear All Completed Tasks" button in an accordion menu at the top, it should only be visible when you want to edit the ToDo list
 - [] Add little 'x' icon that when clicked, the task will be deleted from the todoData array
+- [] Get long tasks to word-wrap (this is especially broken on mobile)
+- [x] Style the scrollbar
 
 ---
 
